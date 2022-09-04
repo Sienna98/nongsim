@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #999;
+  color: #333;
+  font-size: 62.5%;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+/* HEADER */
+.header {
+  position: relative;
+}
+.header .topbar {
+  width: 100%;
+  background-color: #f4f4f4;
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 45px;
+}
+.header .topbar .inner {
+  display: flex;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.header .topbar li {
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  text-align: center;
+}
+.header .topbar li:not(:first-child) {
+  margin-left: 20px;
+}
+.header .topbar li a span:hover {
+  color: #333;
+}
+.header .topbar .bar > a > span{
+  display: block;
+  position: relative;
+  display: block;
+  width: 100%;
+  color: #999;
+  position: relative;
+  transition: color 0.4s;
+}
+.header .topbar .bar.on a span {
+  color: #333;
+}
+.header .topbar .bar.on a span::after{
+  width: 100%;
+}
+.header .topbar .bar.bar-menu1 a span::after{
+  border-color: #96c11f;
+}
+.header .topbar .bar.bar-menu2 a span::after{
+  border-color: #DA1009;
+}
+.header .topbar .bar.bar-menu3 a span::after{
+  border-color: #FE8100;
+}
+.header .topbar .bar.bar-menu4 a span::after{
+  border-color: #47b3ea;
+}
+
+.header .topbar .bar > a > span::after{
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  padding-bottom: 10px;
+  bottom: 0;
+  left: 50%;
+  border-bottom: 4px solid transparent;
+  transform: translateX(-50%);
+  transition:width .4s
+}
+.header .topbar .bar > a:hover span::after{
+  width: 100%;
+}
+
+.header nav {
+  height: 80px;
+  font-size: 1.05rem;
+  transition: 310ms;
+  position: relative;
+  padding: 0 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header nav:hover {
+  background-color: #fff;
+}
+.header nav .logo {
+  width: 170px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header nav .logo a {
+ background-image: url(../img/logo_white.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 120px;
+ height: 38px;
+}
+.header nav:hover .logo a {
+  background-image: url(../img/logo_black.png);
+}
+.header nav:hover .main-menu .img-btn {
+  background-image: url(../img/N.LIVE.svg);
+}
+.header nav:hover li a span{
+  color: #333;
+}
+.header nav .main-menu {
+  width: 680px;
+  height: 100%;
+  line-height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.header nav .main-menu > li {
+  flex-grow : 1;
+  text-align: center;
+}
+.header nav.shadow {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.header .nav .main-menu::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #fff;
+  z-index: -1;
+  transition: height 0.4s;
+}
+.header .nav .main-menu:hover::before {
+  height: 520px;
+}
+.header nav .main-menu a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.header nav .main-menu .menu a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.header nav .main-menu .menu  a  span {
+  position: relative;
+}
+.header nav .main-menu .menu > a > span::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  border-top: 2px solid #d83832;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s;
+}
+.header nav .main-menu .menu:hover > a > span::after{
+  width: 100%
+}
+.header nav .main-menu .img-btn {
+  background-image: url(../img/N.LIVE\ \(1\).svg);
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 35px;
+  cursor: pointer;
+  flex-grow: inherit;
+  margin: 23px 0 0 10px;
+}
+.header nav .main-menu .menu-contents {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+.header nav .main-menu .menu:hover .menu-contents {
+  height: 400px;
+  transition: height 0.4s;
+}
+.header nav .main-menu .menu-contents .menu-list .inner{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.header nav .main-menu .menu-contents .menu-list .width-2x {
+ width: 560px;
+}
+.header nav .main-menu .menu-contents .menu-list .flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+}
+.header nav .main-menu .menu-contents .menu-list .flex li {
+  width: 26%;
+}
+.header nav .main-menu .menu-contents .menu-list li > ul {
+  padding: 20px 0 10px;
+}
+.header nav .main-menu .menu-contents .menu-list li > ul > li {
+  height: 30px;
+  line-height: 30px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.header nav .main-menu .menu-contents .menu-list li > ul > li > a {
+  color: #333;
+  font-weight: 400;
+  
+}
+.header nav .main-menu .menu-contents .menu-list li > ul > li > a span::after {
+  content: '';
+  width: 0;
+  height: 1.2px;
+  background-color: #d83832;
+  position: absolute;
+  top: 23px;
+  left: 0px;
+  display: inline-block;
+  transition: width 0.4s;
+}
+.header nav .main-menu .menu-contents .menu-list li > ul > li:hover > a span::after {
+  width: 100%;
+}
+.header nav .main-menu .menu-contents .menu-list h3 {
+  width: 260px;
+  height: 60px;
+  margin: 0 20px;
+  border-bottom: 1px solid rgb(218, 218, 218);
+  cursor: pointer;
+}
+.header nav .main-menu .menu-contents .menu-list li {
+  position: relative;
+}
+.header nav .main-menu .menu-contents .menu-list li i {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 35px;
+  right: 30px;
+  font-size: 0.5rem;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  cursor: pointer;
+}
+.header nav .sub-menu {
+  width: 180px;
+  height: 100%;
+  display: flex;
+  font-size: 1.4rem;
+  line-height: 80px;
+}
+.header nav .sub-menu > li {
+  flex-grow: 1;
+  display: flex;
+  text-align: center;
+  position: relative;
+}
+.header nav .sub-menu > li > a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  padding-bottom: 3px;
+}
+.header nav .sub-menu li > a > span {
+  position: relative;
+}
+.header nav .sub-menu li > a > span::after {
+  content: '';
+  width: 0;
+  border-bottom: 2px solid #DA1009;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2px;
+  transition: width 0.2s;
+}
+.header nav .sub-menu > li:hover > a > span::after {
+width: 100%;
+transition: width .2s;
+}
+.header nav .sub-menu >li > ul  {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  padding: 30px 40px;
+  position: absolute;
+  top: 90px;
+  right: 0;
+  width: 140px;
+  text-align: left;
+  transition: all 0.3s;
+}
+.header nav .sub-menu >li:hover > ul  {
+  visibility: visible;
+  opacity: 1;
+  top: 80px;
+}
+.header nav .sub-menu >li > ul > li {
+  line-height: 30px;
+  cursor: pointer;
+}
+.header nav .sub-menu >li > ul > li > a > span {
+  color: #333;
+  font-size: 0.8rem;
+}
+.header nav .sub-menu >li > ul > li > a {
+  position: relative;
+}
+.header nav .sub-menu >li > ul > li > a > span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  transform: translateX(0);
+  top: 0;
+  border-bottom: 1px solid #DA1009;
+  width: 0;
+  transition: width 0.2s;
+  
+}
+.header nav .sub-menu >li > ul > li:hover > a > span::after {
+ width: 100%;
+}
+

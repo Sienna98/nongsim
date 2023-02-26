@@ -21,6 +21,7 @@ body {
   background-color: #999;
   color: #333;
   font-size: 62.5%;
+  height: 2000px;
 }
 
 body * {
@@ -34,7 +35,11 @@ body * {
 }
 /* HEADER */
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transition: top 0.4s;
 }
 .header .topbar {
   width: 100%;

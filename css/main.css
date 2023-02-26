@@ -21,7 +21,7 @@ body {
   background-color: #999;
   color: #333;
   font-size: 62.5%;
-  height: 2000px;
+  height: 6000px;
 }
 
 body * {
@@ -39,7 +39,7 @@ body * {
   top: 0;
   left: 0;
   width: 100vw;
-  transition: top 0.4s;
+  transition: top 0.3s;
 }
 .header .topbar {
   width: 100%;
